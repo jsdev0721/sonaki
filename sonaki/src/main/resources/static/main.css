@@ -1,0 +1,13 @@
+.custom-navbar {
+    background-color: #2EADE0 !important; /* 배경색 변경 */
+}
+
+.custom-btn {
+    background-color: #2EADE0; /* 원하는 배경색 */
+    color: white; /* 텍스트 색상 */
+}
+
+.custom-btn:hover {
+    background-color: #187EA5; /* 마우스 오버 시 색상 */
+	color: white; /* 텍스트 색상 */
+}
