@@ -11,3 +11,11 @@
     background-color: #187EA5; /* 마우스 오버 시 색상 */
 	color: white; /* 텍스트 색상 */
 }
+
+
+hr {
+  background-color: #2EADE0;
+  height:10px;
+  border:0px;
+  opacity:1;
+}
