@@ -32,7 +32,8 @@ public class SecurityConfig {
 		
 		.formLogin( (formLogin) -> formLogin
 				.loginPage("/user/login")
-				.defaultSuccessUrl("/") ) // 로그인 성공하면 "/"(question/list)로 감 
+				.defaultSuccessUrl("/") // 로그인 성공하면 "/"(question/list)로 감 
+				.failureUrl("/user/login?error=true"))
 		
 		.logout((logout) -> logout
 				.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))

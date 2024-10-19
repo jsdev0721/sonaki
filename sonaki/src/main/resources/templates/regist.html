@@ -1,0 +1,32 @@
+<html layout:decorate="~{layout}">
+  <div class="container my-3" layout:fragment="content">
+	
+	<form method="post" th:action="@{/user/regist}" th:object="${userRegistForm}">
+	
+	<div th:fragment="formErrorsFragment" class="alert alert-danger mb-3" role="alert" th:if="${#fields.hasAnyErrors()}" style="width: 450px; margin: auto;">
+		<div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>
+	</div>
+		
+    <div class="mb-3" style="width: 300px; margin: 0 auto;">
+      	<label for="username" class="form-label">사용자 ID</label>
+      	<input type="text" class="form-control" th:field="*{username}">
+    </div>
+	
+	<div class="mb-3" style="width: 300px; margin: 0 auto;">
+	  	<label for="password" class="form-label">비밀번호</label>
+	  	<input type="password" class="form-control" th:field="*{password}">
+	</div>
+	
+	<div class="mb-3" style="width: 300px; margin: 0 auto;">
+		<label for="email" class="form-label">이메일</label>
+		<input type="text" class="form-control" th:field="*{email}">
+	</div>
+	
+	<div class="mt-4" style="width: 300px; margin: 0 auto;">
+		<button type="submit" class="btn custom-btn" style="width: 300px;">회원 가입</button>
+	</div>
+	
+	</form>
+	
+  </div>
+</html>
