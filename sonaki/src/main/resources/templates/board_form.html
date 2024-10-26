@@ -1,0 +1,40 @@
+<html layout:decorate="~{layout}">
+<div class="container my-3" layout:fragment="content">
+    
+    <div class="mb-3" style="width: 800px; margin: 0 auto;">
+        <input type="text" class="form-control" placeholder="제목" name="title" id="title">
+    </div>
+    
+    <div class="mb-3" style="width: 800px; margin: 0 auto;">
+		
+		<link rel="stylesheet"  th:href="@{/ckeditor5/style.css}">
+		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.css">
+		
+		<div class="editor-container editor-container_classic-editor" id="editor-container">
+			<div class="editor-container__editor">
+				<div id="editor"></div>
+			</div>
+		</div>
+		
+		<script type="importmap">
+		{
+			"imports": {
+				"ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.2.0/ckeditor5.js",
+				"ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.2.0/"
+			}
+		}
+		</script>
+		<script type="module" th:src="@{/ckeditor5/main.js}"></script>
+		
+    </div>
+	
+	<div class="mb-3" style="width: 800px; margin: 0 auto; text-align: right;">
+		<button type="submit" class="btn custom-btn">작성</button>
+	</div>
+    
+</div>
+</html>
+
+
+
+

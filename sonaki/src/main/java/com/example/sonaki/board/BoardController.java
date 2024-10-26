@@ -18,4 +18,14 @@ public class BoardController {
 		return "board";
 	}
 	
+	@GetMapping("/free")
+	public String freeboard() {
+		return "freeboard";
+	}
+	
+	@GetMapping("/form")
+	public String boardform() {
+		return "board_form";
+	}
+	
 }
