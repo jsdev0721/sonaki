@@ -1,8 +1,5 @@
-package com.example.sonaki.board;
+package com.example.sonaki.image;
 
-import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,19 +8,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
 @Setter
-public class Board {
+@Getter
+public class Image {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String title;
-	
-	@Column(length = 1024)
-	private String content;
-	
-	private LocalDateTime createDate;
-	
+	private String original;
 }

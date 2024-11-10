@@ -1,6 +1,21 @@
 <html layout:decorate="~{layout}">
 <div class="container my-3" layout:fragment="content">
 	
+	<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+	    document.querySelectorAll("oembed[url]").forEach(element => {
+	      const url = element.getAttribute("url");
+	      const iframe = document.createElement("iframe");
+	      iframe.setAttribute("width", "650");
+	      iframe.setAttribute("height", "400");
+	      iframe.setAttribute("frameborder", "0");
+	      iframe.setAttribute("allowfullscreen", "");
+	      iframe.setAttribute("src", url.replace("youtu.be", "www.youtube.com/embed").split("?")[0]);
+	      element.replaceWith(iframe);
+	    });
+	  });
+	</script>
+	
 	<h2 class="border-bottom py-2" th:text="${board.title}"></h2>
 		<div class = "card my-3">
 			<div class="card-header d-flex justify-content-end-between">

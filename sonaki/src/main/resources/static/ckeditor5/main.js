@@ -51,6 +51,9 @@ import {
 import translations from 'ckeditor5/translations/ko.js';
 
 const editorConfig = {
+	simpleUpload: {
+	        uploadUrl: '/image/upload'  // 파일을 업로드할 API 엔드포인트
+	},
 	toolbar: {
 		items: [
 			'undo',

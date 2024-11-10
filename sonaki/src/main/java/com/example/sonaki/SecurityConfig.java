@@ -25,7 +25,8 @@ public class SecurityConfig {
 				.requestMatchers(new AntPathRequestMatcher("/**")).permitAll()) // 모든 url를 시큐리티를 안거치게 해둠
 		
 		.csrf((csrf) -> csrf
-				.ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**"))) // h2는 csrf(토큰)이 발행이 안됨, csrf 검사를 안하게 해줘서 h2들어갈수잇게해줌
+				.ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**"))
+				.ignoringRequestMatchers(new AntPathRequestMatcher("/image/upload"))) // h2는 csrf(토큰)이 발행이 안됨, csrf 검사를 안하게 해줘서 h2들어갈수잇게해줌
 		
 		.headers((headers) -> headers
 				.addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))) // h2 사이트 방식대로 보이게해줌 (시큐리티는 X-Frame-Options, h2는 DENY 방식)
